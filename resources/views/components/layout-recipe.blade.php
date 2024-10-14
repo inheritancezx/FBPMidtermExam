@@ -11,8 +11,8 @@
 
 <body>
     <div>
-        <x-header>
-        </x-header>
+        <x-header-recipe>
+        </x-header-recipe>
 
         <main>
             {{ $slot }}

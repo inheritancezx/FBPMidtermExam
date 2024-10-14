@@ -11,9 +11,6 @@
 
 <body>
     <div>
-        <x-header>
-        </x-header>
-
         <main>
             {{ $slot }}
         </main>
