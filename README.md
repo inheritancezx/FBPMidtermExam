@@ -12,15 +12,42 @@ The midterm exam requires us to work as a group on a website programmed using la
 ### UI Documentation
 **Register Page**
 
+<img width="1470" alt="Screenshot 2024-10-17 at 23 33 22" src="https://github.com/user-attachments/assets/253920c4-4452-4faf-bb5f-9029fa586edc">
+
 **Login Page**
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 33 39" src="https://github.com/user-attachments/assets/790c3c04-e544-47c5-9224-e9f53fafd924">
+
 
 **Home page / Landing Page**
 
+<img width="1470" alt="Screenshot 2024-10-17 at 23 31 34" src="https://github.com/user-attachments/assets/fb144bb1-eed4-4d8f-ad99-d22bac8439b9">
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 32 18" src="https://github.com/user-attachments/assets/d2e424de-8dad-45ee-93d0-e3c990a79394">
+
 **About Page**
+
+
 
 **FAQ Page**
 
+<img width="1470" alt="Screenshot 2024-10-17 at 23 32 59" src="https://github.com/user-attachments/assets/cebc141f-7413-49dc-abaa-af9db3ede739">
+
 **Recipes Page**
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 34 20" src="https://github.com/user-attachments/assets/c9cc2b98-9a97-4670-8b4d-a9dcd1985f45">
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 34 39" src="https://github.com/user-attachments/assets/0029c90b-3659-4945-95d0-7f5cf17cadd3">
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 34 54" src="https://github.com/user-attachments/assets/8b844728-1b16-4c38-9320-ace6654038c8">
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 35 26" src="https://github.com/user-attachments/assets/721c46b7-a591-40ff-821d-201580f5f334">
+
+<img width="232" alt="Screenshot 2024-10-17 at 23 35 42" src="https://github.com/user-attachments/assets/85d1a0b6-d1b4-4929-ae78-1e3392a1d95a">
+
+**Profile Page**
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 36 16" src="https://github.com/user-attachments/assets/160fa7d0-7e80-4169-bf42-524edb40c748">
 
 ## Authentication
 
