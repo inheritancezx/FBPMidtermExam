@@ -12,14 +12,27 @@ class RegisterController extends Controller {
         return view('register');
     }
     
-    public function store() {
-        $attr = request()->validate([
-            'name'=>['required'],
-            'email'=>['required','email'],
-            'password'=>['required',Password::min(8),'confirmed']
+    public function store(Request $attr) {
+        $attr->validate([
+            'name'=>'required|string',
+            'email'=>'required|string',
+            'password'=> 'required|string|min:8',
+            'confirm-password'=>'required|string|min:8'
         ]);
-        $user = User::create($attr);
-        Auth::login($user);
-        return redirect(route('/login'));
+
+        $name = $attr->input('name');
+        $email = $attr->input('email');
+        $password = $attr->input('password');
+
+        User::create([
+            'name' => $name,
+            'email' => $email,
+            'password' => $password
+        ]);
+
+        // $user = User::create($attr);
+        // Auth::login($user);
+        // return redirect(route('/login'));
+        return redirect()->route('login')->with('success', 'user added successfully!');
     }
 }

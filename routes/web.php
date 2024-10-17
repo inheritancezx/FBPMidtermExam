@@ -11,9 +11,9 @@ use App\Models\Recipe;
 
 Route::middleware(['guest'])->group(function() {
     Route::get('/register', [RegisterController::class, 'create']);
-    Route::post('/register',[RegisterController::class, 'store']);
+    Route::post('/register/store',[RegisterController::class, 'store'])->name('register.store');
 
-    Route::get('/login', [LoginController::class, 'create']);
+    Route::get('/login', [LoginController::class, 'create'])->name('login');
     Route::post('/login', [LoginController::class, 'store']);
 });
 
