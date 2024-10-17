@@ -9,67 +9,45 @@ Tabina Callistadya - 5025221318
 ### Overview
 The midterm exam requires us to work as a group on a website programmed using laravel framework and a development environment, by implementing CRUD features.
 
-### UI Documentation
-**Register Page**
+## Model
 
-<img width="1470" alt="Screenshot 2024-10-17 at 23 33 22" src="https://github.com/user-attachments/assets/253920c4-4452-4faf-bb5f-9029fa586edc">
+## View
+View is the display of our website. Where moreover consisting of each pages UI display and their differences when accessed by guest or an authenticated user.
 
-**Login Page**
+### Components
+mostly are the usual components element such as [guest.layout.php](/resources/views/components/guess.blade.php), [layout.blade.php](/resources/views/components/layout.blade.php), and [navbar.blade.php](/resources/views/components/navbar.blade.php). To highlight differences of our website with the weekly laravel assignment shall be the authentication feature and modal implementations in the `navbar`.
 
-<img width="1470" alt="Screenshot 2024-10-17 at 23 33 39" src="https://github.com/user-attachments/assets/790c3c04-e544-47c5-9224-e9f53fafd924">
+- **authentication**
+    
+    guest user and authenticated user have different access in our website, all to ensure people will register to our website, due to special features our website provide permits to only authenticated users.
 
+    **as guest**
 
-**Home page / Landing Page**
+    [navbar image before auth]
 
-<img width="1470" alt="Screenshot 2024-10-17 at 23 31 34" src="https://github.com/user-attachments/assets/fb144bb1-eed4-4d8f-ad99-d22bac8439b9">
+    **as authenticated user**
 
-<img width="1470" alt="Screenshot 2024-10-17 at 23 32 18" src="https://github.com/user-attachments/assets/d2e424de-8dad-45ee-93d0-e3c990a79394">
+    [navbar image after auth auth]
 
-**About Page**
+    The first authentication feature used is to determine the routing for the navbar. If thee user is authorized, they will be routed to recipes page, but if it is not (guest), it will be routed to the login page first.
 
+    ```php
+        @Auth
+        <li>
+            <a href="/recipes"  class="block py-2 pr-4 pl-3 font-extrabold text-[#fefae0] border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#3e4058] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+            >Recipes</a>
+        </li>
+        @else
+        <li>
+            <a href="/login"  class="block py-2 pr-4 pl-3 font-extrabold text-[#fefae0] border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#3e4058] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+            >Recipes</a>
+        </li>
+        @endauth
+    ```
+    The second authentication feature is to determine which button will be displayed in the user UI on the top right corner. If it is authenticated, it will display a button named "Add Recipe" that is used for the user to add their own recipe to the website. Theres also a profile that has a dropdown menu containing "Profile" that will navigate to the profile page and "Log Out" to terminate/destroy the user session. But if its not authenticated, then it will display 2 button. Which are "Log In" that will route to the login page and "Dont have an account yet?" that will route to the register page.
 
-
-**FAQ Page**
-
-<img width="1470" alt="Screenshot 2024-10-17 at 23 32 59" src="https://github.com/user-attachments/assets/cebc141f-7413-49dc-abaa-af9db3ede739">
-
-**Recipes Page**
-
-<img width="1470" alt="Screenshot 2024-10-17 at 23 34 20" src="https://github.com/user-attachments/assets/c9cc2b98-9a97-4670-8b4d-a9dcd1985f45">
-
-<img width="1470" alt="Screenshot 2024-10-17 at 23 34 39" src="https://github.com/user-attachments/assets/0029c90b-3659-4945-95d0-7f5cf17cadd3">
-
-<img width="1470" alt="Screenshot 2024-10-17 at 23 34 54" src="https://github.com/user-attachments/assets/8b844728-1b16-4c38-9320-ace6654038c8">
-
-<img width="1470" alt="Screenshot 2024-10-17 at 23 35 26" src="https://github.com/user-attachments/assets/721c46b7-a591-40ff-821d-201580f5f334">
-
-<img width="232" alt="Screenshot 2024-10-17 at 23 35 42" src="https://github.com/user-attachments/assets/85d1a0b6-d1b4-4929-ae78-1e3392a1d95a">
-
-**Profile Page**
-
-<img width="1470" alt="Screenshot 2024-10-17 at 23 36 16" src="https://github.com/user-attachments/assets/160fa7d0-7e80-4169-bf42-524edb40c748">
-
-## Authentication
-
-The first authentication used is to determine the routing for the navbar. If thee user is authorized, they will be routed to recipes page, but if it is not (guest), it will be routed to the login page first.
-
-```php
-                @Auth
-                <li>
-                    <a href="/recipes"  class="block py-2 pr-4 pl-3 font-extrabold text-[#fefae0] border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#3e4058] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                    >Recipes</a>
-                </li>
-                @else
-                <li>
-                    <a href="/login"  class="block py-2 pr-4 pl-3 font-extrabold text-[#fefae0] border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#3e4058] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                    >Recipes</a>
-                </li>
-                @endauth
-```
-The second authentication is to determine which button will be displayed in the user UI on the top right corner. If it is authenticated, it will display a button named "Add Recipe" that is used for the user to add their own recipe to the website. Theres also a profile that has a dropdown menu containing "Profile" that will navigate to the profile page and "Log Out" to terminate/destroy the user session. But if its not authenticated, then it will display 2 button. Which are "Log In" that will route to the login page and "Dont have an account yet?" that will route to the register page.
-
-```php
-<div class="flex lg:order-2 items-end justify-end absolute right-12">
+    ```php
+        <div class="flex lg:order-2 items-end justify-end absolute right-12">
             @Auth
             <button type="button" id="updateProductButton" data-modal-target="updateProductModal" data-modal-toggle="updateProductModal" class="hidden sm:inline-flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
                 <svg aria-hidden="true" class="mr-1 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -114,6 +92,64 @@ The second authentication is to determine which button will be displayed in the 
             </button>
             @endauth
         </div>
-```
+    ```
 
-### Modal Implementation
+- **Modal Implementation**
+
+    **add recipe button**
+    <img width="1470" alt="Screenshot 2024-10-17 at 23 35 26" src="https://github.com/user-attachments/assets/721c46b7-a591-40ff-821d-201580f5f334">
+
+    <br>
+
+    **profile button**
+
+    <img width="232" alt="Screenshot 2024-10-17 at 23 35 42" src="https://github.com/user-attachments/assets/85d1a0b6-d1b4-4929-ae78-1e3392a1d95a">
+
+<br>
+
+### Model-Views
+model-view involves in the pages that has the CRUD features, that includes [recipes.blade.php](/resources/views/recipes.blade.php) (and their single-post view [recipe.blade.php](/resources/views/recipe.blade.php)) as well as [Myrecipe.blade.php](/resources/views/Myrecipe.blade.php) (and their 'bridging'-view [profile.blade.php](/resources/views/profile.blade.php)).
+
+**Recipes Page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 34 20" src="https://github.com/user-attachments/assets/c9cc2b98-9a97-4670-8b4d-a9dcd1985f45">
+
+<img width="1470" alt="Screenshot 2024-10-17 at 23 34 39" src="https://github.com/user-attachments/assets/0029c90b-3659-4945-95d0-7f5cf17cadd3">
+
+<br>
+
+**Single-post Recipe page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 34 54" src="https://github.com/user-attachments/assets/8b844728-1b16-4c38-9320-ace6654038c8">
+
+
+**Profile Page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 36 16" src="https://github.com/user-attachments/assets/160fa7d0-7e80-4169-bf42-524edb40c748">
+
+**Single-Post Personal Recipe Page**
+
+[kapal selam image]
+
+### Authentication Views
+Are the [login.blade.php](/resources/views/login.blade.php) and [register.blade.php](/resources/views/register.blade.php) pages. These pages utilizes `<form>` function in recieving as well as storing data.
+
+**Register Page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 33 22" src="https://github.com/user-attachments/assets/253920c4-4452-4faf-bb5f-9029fa586edc">
+
+**Login Page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 33 39" src="https://github.com/user-attachments/assets/790c3c04-e544-47c5-9224-e9f53fafd924">
+
+### Other Views
+Other views are the complementary views that completes our website.
+
+**Home page / Landing Page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 31 34" src="https://github.com/user-attachments/assets/fb144bb1-eed4-4d8f-ad99-d22bac8439b9">
+
+**About Page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 32 18" src="https://github.com/user-attachments/assets/d2e424de-8dad-45ee-93d0-e3c990a79394">
+
+**FAQ Page**
+<img width="1470" alt="Screenshot 2024-10-17 at 23 32 59" src="https://github.com/user-attachments/assets/cebc141f-7413-49dc-abaa-af9db3ede739">
+
+
+## Controller
+
+## Database
