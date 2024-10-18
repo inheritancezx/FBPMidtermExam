@@ -12,7 +12,7 @@ The midterm exam requires us to work as a group on a website programmed using la
 ## Database
 ### PDM
 
-[pdm image]
+![recipe_pdm-2024-10-16_18-46](https://github.com/user-attachments/assets/cd8ff813-051a-4448-a8e9-b736f24d57db)
 
 ## Model
 From the database we have provided before, there are 5 models according to our databases respectively. [category.php](/app/Models/Category.php), [course.php](/app/Models/Course.php), [food.php](/app/Models/Food.php), [recipe.php](/app/Models/Recipe.php), and [user.php](/app/Models/User.php). 
@@ -96,12 +96,10 @@ mostly are the usual components element such as [guest.layout.php](/resources/vi
     guest user and authenticated user have different access in our website, all to ensure people will register to our website, due to special features our website provide permits to only authenticated users.
 
     **as guest**
-
-    [navbar image before auth]
+    ![image](https://github.com/user-attachments/assets/bdb21968-9b1c-4a8c-8eeb-766a64525abf)
 
     **as authenticated user**
-
-    [navbar image after auth auth]
+    ![image](https://github.com/user-attachments/assets/51b0ffc6-158f-4ef7-826a-55a4732adab2)
 
     The first authentication feature used is to determine the routing for the navbar. If thee user is authorized, they will be routed to recipes page, but if it is not (guest), it will be routed to the login page first.
 
@@ -260,12 +258,13 @@ model-view involves in the pages that has the CRUD features, that includes [reci
 <img width="1470" alt="Screenshot 2024-10-17 at 23 36 16" src="https://github.com/user-attachments/assets/160fa7d0-7e80-4169-bf42-524edb40c748">
 
 **Single-Post Personal Recipe Page**
+![image](https://github.com/user-attachments/assets/90505c7b-3540-41f4-a821-cc721225f822)
 
-[kapal selam image]
 
 however, small there are also one more feature in the model-views, its loacted in the [recipes.blade.php](/resources/views/recipes.blade.php). that is the view of the searching method.
 
-[searching  bar image]
+![image](https://github.com/user-attachments/assets/54822daf-920b-4be5-81c1-19225b65ec13)
+
 
 this searching feature implements a form submition action. where it verifies the search by request.
 
@@ -348,14 +347,14 @@ These pages utilizes `<form>` function in recieving as well as storing data.
 Other views are the complementary views that completes our website.
 
 **Home page / Landing Page**
-[first page]
+![image](https://github.com/user-attachments/assets/d9fab4f4-ba00-4d17-9e15-0c00696fc78c)
 
 <img width="1470" alt="Screenshot 2024-10-17 at 23 31 34" src="https://github.com/user-attachments/assets/fb144bb1-eed4-4d8f-ad99-d22bac8439b9">
 
 <img width="1470" alt="Screenshot 2024-10-17 at 23 32 18" src="https://github.com/user-attachments/assets/d2e424de-8dad-45ee-93d0-e3c990a79394">
 
 **About Page**
-[about page]
+![image](https://github.com/user-attachments/assets/e6bca58a-ea15-47d1-b717-8d161a22e65d)
 
 **FAQ Page**
 <img width="1470" alt="Screenshot 2024-10-17 at 23 32 59" src="https://github.com/user-attachments/assets/cebc141f-7413-49dc-abaa-af9db3ede739">
