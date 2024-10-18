@@ -6,6 +6,8 @@ Tabina Callistadya - 5025221318
 
 </div> 
 
+**youtube link** : https://youtu.be/RG1QP57KRAM
+
 ### Overview
 The midterm exam requires us to work as a group on a website programmed using laravel framework and a development environment, by implementing CRUD features.
 
